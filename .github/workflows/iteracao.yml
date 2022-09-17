@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - 'Iteracao**'
+
 jobs:
   test-setup-ruby:
     runs-on: ubuntu-latest
@@ -11,3 +12,21 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+
+  Run-rake-spec:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - run: rake spec
+
+  Run-rake-cucumber:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - run: rake cucumber

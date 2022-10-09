@@ -40,3 +40,6 @@ Irão ser utilizados no projeto:
 | Ivo de Andrade de Deus | ivo.deus@usp.br | 8075238 |
 | Gustavo Ferreira Silva | gu-ferreira@usp.br | 10687767 |
 | Gustavo Nascimento da Cunha | gcunha@usp.br | 10438400 |
+
+## Link para o Pivotal Tracker
+https://www.pivotaltracker.com/n/projects/2603044

@@ -20,7 +20,7 @@ O projeto constituirá de um organizador e simulador financeiro, no qual o usuá
 
 Temos como objetivo facilitar a organização financeira mensal do usuário, com metas e limites.
 
-> Objetivo -> Usuário loga, insere renda e pode começar a separar
+> Objetivo -> Usuário loga, insere renda e pode começar a separar em objetivos
 
 ## Ferramentas (TBA)
 Irão ser utilizados no projeto:

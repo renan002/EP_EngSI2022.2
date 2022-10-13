@@ -297,7 +297,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
-  coveralls_reborn (~> 0.25.0)
+  coveralls_reborn
   cucumber-rails
   database_cleaner
   debug
@@ -307,7 +307,7 @@ DEPENDENCIES
   rails (~> 7.0.4)
   rspec-rails
   selenium-webdriver
-  simplecov-lcov (~> 0.8.0)
+  simplecov-lcov
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails

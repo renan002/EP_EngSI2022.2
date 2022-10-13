@@ -27,6 +27,9 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem 'coveralls_reborn', require: false
+gem 'simplecov-lcov', require: false
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -80,6 +83,3 @@ group :test do
   # database_cleaner is not mandatory, but highly recommended
   gem 'database_cleaner'
 end
-
-gem 'coveralls_reborn', '~> 0.25.0', require: false
-gem 'simplecov-lcov', '~> 0.8.0'

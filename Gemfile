@@ -27,9 +27,6 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-gem 'coveralls_reborn', require: false
-gem 'simplecov-lcov', require: false
-
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -78,8 +75,16 @@ group :development, :test do
   gem "rspec-rails"
 end
 
-group :test do
+group :development, :test do
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'rspec-rails'
   gem 'cucumber-rails', require: false
-  # database_cleaner is not mandatory, but highly recommended
+  # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
+  # Use sqlite3 as the database for Active Record
+  gem "sqlite3", "~> 1.4"
+  gem 'simplecov',      require: false
+  gem 'simplecov-lcov', require: false
+
 end

@@ -1,8 +1,8 @@
-name: Master
+name: Iteracao
 on:
   push:
     branches:
-      - 'master'
+      - 'Iteracao**'
       
 jobs:
   tests:
@@ -22,8 +22,8 @@ jobs:
       - name: Migrate database
         run: bundle exec rails db:migrate
 
-      - name: Run tests
-        run: bundle exec rspec --format Fivemat
+      - name: Run rspec tests
+        run: bundle exec rspec
 
       - name: Coveralls Parallel
         uses: coverallsapp/github-action@master

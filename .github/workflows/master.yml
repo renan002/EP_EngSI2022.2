@@ -5,10 +5,40 @@ on:
       - 'master'
       
 jobs:
-  test-setup-ruby:
+  tests:
+    name: Executar os testes unitários
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+
+      - name: Install RubyGems
+        run: |
+        bundle install
+
+      - name: Migrate database
+        run: |
+        bundle exec rails db:migrate
+
+      - name: Run tests
+        run: |
+          bundle exec rspec --format Fivemat
+
+      - name: Coveralls Parallel
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.github_token }}
+
+  coveralls:
+    name: Coveralls
+    needs: tests 
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Coveralls Finished
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.github_token }}

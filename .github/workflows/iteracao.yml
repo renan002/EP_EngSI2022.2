@@ -25,17 +25,7 @@ jobs:
       - name: Run rspec tests
         run: bundle exec rspec
 
-      - name: Coveralls Parallel
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-  coveralls:
-    name: Coveralls
-    needs: tests 
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Coveralls Finished
+      - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

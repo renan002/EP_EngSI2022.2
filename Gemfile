@@ -81,6 +81,5 @@ group :test do
   gem 'database_cleaner'
 end
 
-group :test do 
-  gem 'coveralls', require: false 
-end
+gem 'coveralls_reborn', '~> 0.25.0', require: false
+gem 'simplecov-lcov', '~> 0.8.0'

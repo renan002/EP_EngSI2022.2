@@ -83,6 +83,12 @@ GEM
       xpath (~> 3.2)
     childprocess (4.1.0)
     concurrent-ruby (1.1.10)
+    coveralls (0.7.1)
+      multi_json (~> 1.3)
+      rest-client
+      simplecov (>= 0.7)
+      term-ansicolor
+      thor
     crass (1.0.6)
     cucumber (8.0.0)
       builder (~> 3.2, >= 3.2.4)
@@ -127,11 +133,16 @@ GEM
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
     docile (1.4.0)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
     erubi (1.11.0)
     ffi (1.15.5)
     ffi (1.15.5-x64-mingw-ucrt)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    http-accept (1.7.0)
+    http-cookie (1.0.5)
+      domain_name (~> 0.5)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.5)
@@ -157,6 +168,7 @@ GEM
     mini_mime (1.1.2)
     minitest (5.16.3)
     msgpack (1.6.0)
+    multi_json (1.15.0)
     multi_test (1.1.0)
     net-imap (0.3.1)
       net-protocol
@@ -166,6 +178,7 @@ GEM
       timeout
     net-smtp (0.3.2)
       net-protocol
+    netrc (0.11.0)
     nio4r (2.5.8)
     nokogiri (1.13.8-x64-mingw-ucrt)
       racc (~> 1.4)
@@ -208,6 +221,11 @@ GEM
     regexp_parser (2.6.0)
     reline (0.3.1)
       io-console (~> 0.5)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rexml (3.2.5)
     rspec-core (3.11.0)
       rspec-support (~> 3.11.0)
@@ -250,10 +268,15 @@ GEM
     sqlite3 (1.5.3-x86_64-linux)
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
+    sync (0.5.0)
     sys-uname (1.2.2)
       ffi (~> 1.1)
+    term-ansicolor (1.7.1)
+      tins (~> 1.0)
     thor (1.2.1)
     timeout (0.3.0)
+    tins (1.31.1)
+      sync
     turbo-rails (1.3.1)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
@@ -262,6 +285,10 @@ GEM
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2022.5)
       tzinfo (>= 1.0.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.8.2)
+    unf_ext (0.0.8.2-x64-mingw-ucrt)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -287,6 +314,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
+  coveralls
   cucumber-rails
   database_cleaner
   debug

@@ -1,0 +1,2 @@
+class CadastroObjetivo < ApplicationRecord
+end

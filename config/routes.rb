@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  #bin/rails generate controller CadastroObjetivo index --skip-routes
+  get "/cadastro_objetivo", to: "cadastro_objetivo#index"
 end

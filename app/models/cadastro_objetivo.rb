@@ -1,2 +1,2 @@
-class CadastroObjetivo < ApplicationRecord
+class Objetivo < ApplicationRecord
 end

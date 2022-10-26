@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_10_25_233244) do
-  create_table "objetivos", force: :cascade do |t|
+  create_table "cadastro_objetivos", force: :cascade do |t|
     t.string "titulo"
     t.text "descricao"
     t.datetime "created_at", null: false

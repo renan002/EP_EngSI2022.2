@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :dividas
   root 'dividas#new'
+
+  get 'rendas', to: 'rendas#new'
+  resources :rendas
 end

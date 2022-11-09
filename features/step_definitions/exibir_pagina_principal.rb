@@ -3,5 +3,5 @@ Dado('que fui autenticado com sucesso') do
 end
   
 Então('exibe página principal') do
-    visit '/pagina_principal/index'
+    visit '/usuarios/show'
 end

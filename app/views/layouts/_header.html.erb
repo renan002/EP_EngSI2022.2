@@ -1,0 +1,21 @@
+<header>
+  <div>
+    <nav>
+      <ul>
+        <% if logged_in? %>
+          <li>
+            <ul>
+              <li><%= link_to "Página Principal", current_usuario %></li>
+              <li><%= link_to "Configurações", '#' %></li>
+              <li>
+                <%= button_to "Sair", sign_out_path, method: "delete" %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Log in", root_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

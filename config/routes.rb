@@ -1,20 +1,27 @@
 Rails.application.routes.draw do
-  get 'usuarios/new'
-  resources :usuarios
-  get 'objetivo', to: 'objetivo#new'
-  resources :objetivo
-
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
+  
+  get 'sessions/new'
+
+  get 'usuarios/new'
+    
+  get 'objetivo', to: 'objetivo#new'
+  resources :objetivo
+
   get 'dividas', to: 'dividas#new'
   resources :dividas
 
   get 'rendas', to: 'rendas#new'
   resources :rendas
 
-  get 'pagina_principal', to: 'pagina_principal#index'
-  root 'pagina_principal#index'
+  resources :usuarios
+  get 'sign_in' => 'sessions#new'
+  post   'sign_in'   => 'sessions#create'
+  delete 'sign_out'  => 'sessions#destroy'
+
+  root 'sessions#new'
 
 end

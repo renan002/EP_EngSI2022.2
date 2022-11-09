@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       sign_in(@usuario)
       redirect_to @usuario
     else
-      render 'pagina_principal/index'
+      render 'new'
     end
   end
 

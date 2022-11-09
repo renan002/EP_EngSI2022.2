@@ -1,0 +1,14 @@
+<hr>
+<% if logged_in? %>
+    <h1>Página Principal</h1>
+
+    <dl>
+        <dt><strong><%= link_to "Cadastrar Renda", rendas_path(@rendas)%><strong><dt>
+        <dd> Cadastre sua renda mensal
+        <dt><strong><%= link_to "Cadastrar Dívida", dividas_path(@dividas)%><strong><dt>
+        <dd> Cadastre uma dívida qualquer
+    </dl>
+    <hr>
+<% else %>
+    <li><%= link_to "Log in", root_path %></li>
+<% end %>

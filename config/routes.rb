@@ -6,9 +6,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get 'dividas', to: 'dividas#new'
   resources :dividas
-  root 'dividas#new'
 
   get 'rendas', to: 'rendas#new'
   resources :rendas
+
+  get 'pagina_principal', to: 'pagina_principal#index'
+  root 'pagina_principal#index'
+
 end

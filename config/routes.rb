@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'usuarios/new'
+  resources :usuarios
   get 'objetivo', to: 'objetivo#new'
   resources :objetivo
 

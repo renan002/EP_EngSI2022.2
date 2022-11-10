@@ -2,7 +2,7 @@
 
 <% if @divida.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@divida.errors.count, "erro") %> impedem que a conta/divida seja gravado no banco de dados:</h2>
+    <h2><%= pluralize(@divida.errors.count, "erro") %> impedem que a conta/divida seja gravada no banco de dados:</h2>
  
     <ul>
     <% @divida.errors.full_messages.each do |msg| %>
@@ -14,22 +14,22 @@
 
 <%= form_with scope: :divida, url: dividas_path, local: true do |form| %>
   <p>
-    <%= form.label :nome %><br>
+    <%= form.label :nome, 'Nome:' %><br>
     <%= form.text_field :nome %>
   </p>
  
   <p>
-    <%= form.label :descricao %><br>
+    <%= form.label :descricao, 'Descrição:' %><br>
     <%= form.text_field :descricao %>
   </p>
  
   <p>
-    <%= form.label :periodo %><br>
+    <%= form.label :periodo, 'Periodo de cobrança:' %><br>
     <%= form.select :periodo, [['Diário','diario'],['Semanal','semanal'],['Mensal','mensal'],['Anual','anual']] %>
   </p>
  
   <p>
-    <%= form.label :valor %><br>
+    <%= form.label :valor, 'Valor:' %><br>
     <%= form.text_field :valor %>
   </p>
 

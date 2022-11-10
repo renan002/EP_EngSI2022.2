@@ -5,7 +5,7 @@ class ObjetivoController < ApplicationController
     def create
         @objetivo = Objetivo.new(objetivo_params)
         if @objetivo.save
-            redirect_to @objetivo
+            redirect_to "/usuarios/1"
         else
             render :new, status: :unprocessable_entity, content_type: "text/html"
             headers["Content-Type"] = "text/html"

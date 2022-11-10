@@ -5,7 +5,7 @@ class RendasController < ApplicationController
     def create
         @renda = Renda.new(renda_params) 
         if @renda.save
-            redirect_to @renda
+            redirect_to "/usuarios/1"
         else
             render :new, status: :unprocessable_entity, content_type: "text/html"
             headers["Content-Type"] = "text/html"

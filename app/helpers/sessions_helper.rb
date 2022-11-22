@@ -10,7 +10,7 @@ module SessionsHelper
 
     def block_access
         if current_usuario.present?
-            redirect_to root_url
+            redirect_to dashboards_path
         end
     end
 

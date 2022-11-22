@@ -1,2 +1,2 @@
-module RendaHelper
+module RendasHelper
 end

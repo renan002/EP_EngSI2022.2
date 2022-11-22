@@ -1,13 +1,18 @@
 class UsuariosController < ApplicationController
+  before_action :authorize, except: [:new, :create]
 
   def new
     @usuario = Usuario.new
   end
 
+  def index
+    @usuarios = Usuario.all
+  end
+
   def create
     @usuario = Usuario.new(usuario_params)
     if @usuario.save
-      redirect_to @usuario, notice: "Usuário foi criado com sucesso!"
+      redirect_to dashboards_path, notice: "Usuário foi criado com sucesso!"
       sign_in(@usuario)
     else
       render action: :new

@@ -3,6 +3,14 @@ class ObjetivosController < ApplicationController
     def new
         @objetivo = Objetivo.new
     end
+
+    def destroy
+        @objetivo = Objetivo.find(params[:id])
+        @objetivo.destroy
+      
+        redirect_to dashboards_path
+    end
+
     def create
         @objetivo = Objetivo.new(objetivo_params)
         @objetivo.user_id = current_usuario.id

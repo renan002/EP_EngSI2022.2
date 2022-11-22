@@ -6,6 +6,13 @@ class RendasController < ApplicationController
         @renda = Renda.new
     end
 
+    def destroy
+        @renda = Renda.find(params[:id])
+        @renda.destroy
+      
+        redirect_to dashboards_path
+    end
+
     def create
         @renda = Renda.new(renda_params) 
         @renda.user_id = current_usuario.id

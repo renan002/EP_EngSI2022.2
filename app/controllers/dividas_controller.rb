@@ -3,6 +3,14 @@ class DividasController < ApplicationController
     def new
         @divida = Divida.new
     end
+
+    def destroy
+        @divida = Divida.find(params[:id])
+        @divida.destroy
+      
+        redirect_to dashboards_path
+    end
+
     def create
         @divida = Divida.new(divida_params)
         @divida.user_id = current_usuario.id

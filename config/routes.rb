@@ -3,13 +3,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  get "dashboards", to: "dashboards#show"
   
   get 'sessions/new'
 
   get 'usuarios/new'
     
-  get 'objetivo', to: 'objetivo#new'
-  resources :objetivo
+  get 'objetivos', to: 'objetivos#new'
+  resources :objetivos
 
   get 'dividas', to: 'dividas#new'
   resources :dividas

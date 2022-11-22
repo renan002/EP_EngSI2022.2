@@ -1,0 +1,87 @@
+<hr>
+<% if logged_in? %>
+    <h1>Página Principal</h1>
+
+    <dl>
+        <dt><strong><%= link_to "Cadastrar Renda", rendas_path(@rendas)%></strong><dt>
+        <dd> Cadastre sua renda mensal
+    </dl>
+
+	<table>
+		<thead>
+			<th>Profissão</th>
+			<th>Empresa</th>
+			<th>Salário</th>
+			<th>User ID</th>
+		</thead>
+	
+		<tbody>
+			<% Array(@rendas).each do |renda| %>
+				<tr>
+					<td><%= renda.profissao %></td>
+					<td><%= renda.empresa %></td>
+					<td><%= renda.salario %></td>
+					<td><%= renda.user_id %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+	<hr>
+    
+    <dl>
+        <dt><strong><%= link_to "Cadastrar Dívida", dividas_path(@dividas)%></strong><dt>
+        <dd> Cadastre uma dívida qualquer
+    </dl>
+
+	<table>
+		<thead>
+			<th>Nome</th>
+			<th>Descrição</th>
+			<th>Periodo de Cobrança</th>
+			<th>Valor</th>
+			<th>User ID</th>
+		</thead>
+	
+		<tbody>
+			<% Array(@dividas).each do |divida| %>
+				<tr>
+					<td><%= divida.nome %></td>
+					<td><%= divida.descricao %></td>
+					<td><%= divida.periodo %></td>
+					<td><%= divida.valor %></td>
+					<td><%= divida.user_id %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+	<hr>
+
+    <dl>
+		<dt><strong><%= link_to "Cadastrar Objetivo", objetivos_path(@objetivo)%></strong><dt>
+		<dd> Cadastre um objetivo a ser atingido
+    </dl>
+
+	<table>
+		<thead>
+			<th>Titulo</th>
+			<th>Descrição</th>
+			<th>User ID</th>
+		</thead>
+	
+		<tbody>
+			<% Array(@objetivos).each do |objetivo| %>
+				<tr>
+					<td><%= objetivo.titulo %></td>
+					<td><%= objetivo.descricao %></td>
+					<td><%= objetivo.user_id %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+    <hr>
+<% else %>
+    <li><%= link_to "Log in", root_path %></li>
+<% end %>

@@ -6,6 +6,7 @@ RSpec.describe "Sessions", type: :request do
       get "/sessions/new"
       expect(response).to have_http_status(:success)
     end
+
   end
 
 end

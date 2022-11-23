@@ -8,13 +8,13 @@ RSpec.describe RendasController, type: :controller do
 
       let(:renda) { FactoryBot.create(:renda) }
 
-      it "deletes a renda" do
-        renda.destroy
-        expect { renda.reload }.to raise_error(ActiveRecord::RecordNotFound)
+      it "Adiciona Renda" do
+        expect { renda.reload }.to_not raise_error(ActiveRecord::RecordNotFound)
       end
 
-      it "returns http success" do
-        expect { renda.reload }.to_not raise_error(ActiveRecord::RecordNotFound)
+      it "Deleta Renda" do
+        renda.destroy
+        expect { renda.reload }.to raise_error(ActiveRecord::RecordNotFound)
       end
   
   end

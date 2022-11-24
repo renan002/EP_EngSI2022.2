@@ -13,3 +13,90 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html {
+    font-size: 62.5%;
+}
+
+a, a:hover, a:visited, a:active {
+    color: inherit;
+    text-decoration: none;
+   }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    color: #949494;
+    font-size: 2.4rem;
+    font-weight: 400;
+}
+
+h2 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.header {
+
+}
+
+.main-content {
+    padding: 4rem 10%;
+    background-color: #EAEAEA;
+}
+
+.white-box {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #E1E1E1;
+    border-radius: 1rem;
+    padding: 1rem 4rem;
+    margin-bottom: 4rem;
+    display: flex;
+    box-sizing: border-box;
+} 
+.white-box:last-child {
+    margin-bottom: 0;
+}
+
+.green-box {
+    width: 100%;
+    background-color: #2ADCA7;
+    border: 1px solid #2ADCA7;
+    border-radius: 1rem;
+    padding: 1rem 4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    box-sizing: border-box;
+    justify-content:space-between;
+}
+
+.green-box-btn {
+    background-color: #2ADCA7;
+    border: 2px solid white;
+    border-radius: 1rem;
+    color: white;
+    text-transform: uppercase;
+    padding: .5rem 2rem;
+    text-decoration: none;
+}
+.green-box-btn:hover {
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 1rem;
+    color: #2ADCA7;
+    text-transform: uppercase;
+    padding: .5rem 2rem;
+    text-decoration: none;
+}
+
+.footer {
+
+}

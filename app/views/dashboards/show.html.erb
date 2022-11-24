@@ -1,94 +1,102 @@
-<hr>
 <% if logged_in? %>
-    <h1>Página Principal</h1>
 
-    <dl>
-        <dt><strong><%= link_to "Cadastrar Renda", rendas_path%></strong><dt>
-        <dd> Cadastre sua renda mensal
-    </dl>
+	<section class='main-content'>
 
-	<table>
-		<thead>
-			<th>Profissão</th>
-			<th>Empresa</th>
-			<th>Salário</th>
-			<th>User ID</th>
-			<th>Deletar</th>
-		</thead>
-	
-		<tbody>
-			<% Array(@rendas).each do |renda| %>
-				<tr>
-					<td><%= renda.profissao %></td>
-					<td><%= renda.empresa %></td>
-					<td><%= renda.salario %></td>
-					<td><%= renda.user_id %></td>
-					<td><%= button_to "Delete", {:controller => :rendas,
-      :action => 'destroy', :id => renda.id }, :method => :delete %></td>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
+		<div class='white-box'>
+			<h1>Seja bem vindo ao seu perfil, {$nome}!</h1>
+		</div>
 
-	<hr>
-    
-    <dl>
-        <dt><strong><%= link_to "Cadastrar Dívida", dividas_path%></strong><dt>
-        <dd> Cadastre uma dívida qualquer
-    </dl>
+		<div class='green-box'>
+			<h2>Cadastre sua renda mensal</h2>
+			<button class='green-box-btn'><strong><%= link_to "Cadastrar Renda", rendas_path%></strong></button>	
+		</div>
+		
+		<div class='white-box'>
+			<table>
+				<thead>
+					<th>Profissão</th>
+					<th>Empresa</th>
+					<th>Salário</th>
+					<th>Deletar</th>
+				</thead>
+			
+				<tbody>
+					<% Array(@rendas).each do |renda| %>
+						<tr>
+							<td><%= renda.profissao %></td>
+							<td><%= renda.empresa %></td>
+							<td><%= renda.salario %></td>
+							<td><%= button_to "Delete", {:controller => :rendas,
+			:action => 'destroy', :id => renda.id }, :method => :delete %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
 
-	<table>
-		<thead>
-			<th>Nome</th>
-			<th>Descrição</th>
-			<th>Periodo de Cobrança</th>
-			<th>Valor</th>
-			<th>User ID</th>
-		</thead>
-	
-		<tbody>
-			<% Array(@dividas).each do |divida| %>
-				<tr>
-					<td><%= divida.nome %></td>
-					<td><%= divida.descricao %></td>
-					<td><%= divida.periodo %></td>
-					<td><%= divida.valor %></td>
-					<td><%= divida.user_id %></td>
-					<td><%= button_to "Delete", {:controller => :dividas,
-      :action => 'destroy', :id => divida.id }, :method => :delete %></td>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
 
-	<hr>
+		
+		<div class='green-box'>
+			<h2> Cadastre uma dívida qualquer </h2>
+			<button class='green-box-btn'><strong><%= link_to "Cadastrar Dívida", dividas_path%></strong></button>
+		</div>
 
-    <dl>
-		<dt><strong><%= link_to "Cadastrar Objetivo", objetivos_path%></strong><dt>
-		<dd> Cadastre um objetivo a ser atingido
-    </dl>
+		<div class='white-box'> 
+			<table>
+				<thead>
+					<th>Nome</th>
+					<th>Descrição</th>
+					<th>Periodo de Cobrança</th>
+					<th>Valor</th>
+					<th>Deletar</th>
+				</thead>
+			
+				<tbody>
+					<% Array(@dividas).each do |divida| %>
+						<tr>
+							<td><%= divida.nome %></td>
+							<td><%= divida.descricao %></td>
+							<td><%= divida.periodo %></td>
+							<td><%= divida.valor %></td>
+							<td><%= button_to "Delete", {:controller => :dividas,
+			:action => 'destroy', :id => divida.id }, :method => :delete %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
 
-	<table>
-		<thead>
-			<th>Titulo</th>
-			<th>Descrição</th>
-			<th>User ID</th>
-		</thead>
-	
-		<tbody>
-			<% Array(@objetivos).each do |objetivo| %>
-				<tr>
-					<td><%= objetivo.titulo %></td>
-					<td><%= objetivo.descricao %></td>
-					<td><%= objetivo.user_id %></td>
-					<td><%= button_to "Delete", {:controller => :objetivos,
-      :action => 'destroy', :id => objetivo.id }, :method => :delete %></td>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
 
-    <hr>
+
+
+		<div class='green-box'>
+			<h2> Cadastre um objetivo a ser atingido </h2>
+			<button class='green-box-btn'><strong><%= link_to "Cadastrar Objetivo", objetivos_path%></strong></button>
+		</div>
+
+		<div class='white-box'>
+			<table>
+				<thead>
+					<th>Titulo</th>
+					<th>Descrição</th>
+					<th>Deletar</th>
+				</thead>
+			
+				<tbody>
+					<% Array(@objetivos).each do |objetivo| %>
+						<tr>
+							<td><%= objetivo.titulo %></td>
+							<td><%= objetivo.descricao %></td>
+							<td><%= button_to "Delete", {:controller => :objetivos,
+			:action => 'destroy', :id => objetivo.id }, :method => :delete %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+
+	</section>
+
 <% else %>
     <li><%= link_to "Log in", root_path %></li>
 <% end %>

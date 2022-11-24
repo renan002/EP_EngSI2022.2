@@ -9,6 +9,9 @@ class UsuariosController < ApplicationController
     @usuarios = Usuario.all
   end
 
+  def edit
+  end
+
   def create
     @usuario = Usuario.new(usuario_params)
     if @usuario.save
@@ -21,6 +24,19 @@ class UsuariosController < ApplicationController
 
   def show
     @usuario = Usuario.find(params[:id])
+  end
+
+  def update
+    @usuario = Usuario.find(params[:id])
+    respond_to do |format|
+      if @usuario.update(usuario_params)
+        format.html { redirect_to usuario_url(@usuario), notice: "Usuário atualizado com sucesso." }
+        format.json { render :show, status: :ok, location: @usuario }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @usuario_params.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   private

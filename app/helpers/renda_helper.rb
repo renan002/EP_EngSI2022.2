@@ -1,2 +1,0 @@
-module RendaHelper
-end

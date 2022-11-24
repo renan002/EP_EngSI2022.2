@@ -137,6 +137,11 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.11.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     ffi (1.15.5)
     ffi (1.15.5-x64-mingw-ucrt)
     globalid (1.0.0)
@@ -322,6 +327,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   debug
+  factory_bot_rails
   importmap-rails
   jbuilder
   pg

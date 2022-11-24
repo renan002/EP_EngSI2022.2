@@ -1,11 +1,21 @@
 class DividasController < ApplicationController
+    before_action :authorize
     def new
         @divida = Divida.new
     end
+
+    def destroy
+        @divida = Divida.find(params[:id])
+        @divida.destroy
+      
+        redirect_to dashboards_path
+    end
+
     def create
         @divida = Divida.new(divida_params)
+        @divida.user_id = current_usuario.id
         if @divida.save
-            redirect_to "/usuarios/1"
+            redirect_to dashboards_path
         else
             render :new, status: :unprocessable_entity, content_type: "text/html"
             headers["Content-Type"] = "text/html"

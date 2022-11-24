@@ -1,0 +1,2 @@
+module RendasHelper
+end

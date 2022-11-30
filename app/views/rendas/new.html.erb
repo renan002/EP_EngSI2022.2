@@ -1,34 +1,33 @@
-<h1>Cadastrar renda</h1>
+<section class='main-content'>
 
-<% if @renda.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@renda.errors.count, "erro") %> impedem que a renda seja gravada no banco de dados:</h2>
- 
-    <ul>
-    <% @renda.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+  <div class='form-titulo'>Cadastrar renda</div>
+
+  <div class='white-box'>
+
+    <% if @renda.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@renda.errors.count, "erro") %> impedem que a renda seja gravada no banco de dados:</h2>
+    
+        <ul>
+        <% @renda.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     <% end %>
-    </ul>
+
+    <%= form_with scope: :renda, url: rendas_path, local: true do |form| %>
+      <p class='form-label'><%= form.label :profissão %></p>
+      <p class='form-input'><%= form.text_field :profissao %></p>
+    
+      <p class='form-label'><%= form.label :empresa %></p>
+      <p class='form-input'><%= form.text_field :empresa %></p>
+
+      <p class='form-label'><%= form.label :salário %></p>
+      <p class='form-input'><%= form.number_field :salario, step: :any %></p>
+
+      <p class='form-btn'><%= form.submit 'Adicionar renda'%></p>
+    <% end %>
   </div>
-<% end %>
 
-<%= form_with scope: :renda, url: rendas_path, local: true do |form| %>
-  <p>
-    <%= form.label :profissão %><br>
-    <%= form.text_field :profissao %>
-  </p>
- 
-  <p>
-    <%= form.label :empresa %><br>
-    <%= form.text_field :empresa %>
-  </p>
-
-  <p>
-    <%= form.label :salário %><br>
-    <%= form.number_field :salario, step: :any %>
-  </p>
-
-  <p>
-    <%= form.submit 'Adicionar renda' %>
-  </p>
-<% end %>
+</section>

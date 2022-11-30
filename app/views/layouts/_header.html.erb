@@ -1,22 +1,23 @@
 <header>
+  <div class='header-logo'>
+    <%= image_tag 'logo.svg', style: '' %>
+    <p>Nome Maneiro</p>
+  </div>
+
   <div>
-    <nav>
+    <nav class='header-nav'>
       <ul>
         <% if logged_in? %>
-          <li><%= link_to "Usuários", usuarios_path %></li>
-          <li>
-            <ul>
-              <li><%= link_to "Página Principal", dashboards_path %></li>
-              <li><%= link_to "Configurações", '#' %></li>
-              <li>
-                <%= button_to "Sair", sign_out_path, method: "delete" %>
-              </li>
-            </ul>
-          </li>
+          <li class='header-btn'><%= link_to "Usuários", usuarios_path %></li>
+          <li class='header-btn'><%= link_to "Página Principal", dashboards_path %></li>
+          <li class='header-btn'><%= link_to "Configurações", '#' %></li>
+          <li class='header-btn'><%= button_to "Sair", sign_out_path, method: "delete" %></li>
         <% else %>
-          <li><%= link_to "Log in", root_path %></li>
+          <li class='header-btn'><%= link_to "Log in", root_path %></li>
         <% end %>
       </ul>
     </nav>
   </div>
+
+
 </header>

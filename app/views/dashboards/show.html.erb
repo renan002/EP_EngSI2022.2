@@ -3,7 +3,7 @@
 	<section class='main-content'>
 
 		<div class='white-box'>
-			<h1>Seja bem vindo ao seu perfil, {$nome}!</h1>
+			<h1>Seja bem vindo ao seu dashboard, {{linkar nome}}!</h1>
 		</div>
 
 		<div class='green-box'>
@@ -12,25 +12,23 @@
 		</div>
 		
 		<div class='white-box'>
-			<table>
-				<thead>
+			<table id='tabela' class='itens-tabela'>
+				<tr>
 					<th>Profissão</th>
 					<th>Empresa</th>
 					<th>Salário</th>
 					<th>Deletar</th>
-				</thead>
-			
-				<tbody>
-					<% Array(@rendas).each do |renda| %>
-						<tr>
-							<td><%= renda.profissao %></td>
-							<td><%= renda.empresa %></td>
-							<td><%= renda.salario %></td>
-							<td><%= button_to "Delete", {:controller => :rendas,
-			:action => 'destroy', :id => renda.id }, :method => :delete %></td>
-						</tr>
-					<% end %>
-				</tbody>
+				</tr>
+
+				<% Array(@rendas).each do |renda| %>
+				<tr class='conteudo-tabela-renda'>
+					<td><%= renda.profissao %></td>
+					<td><%= renda.empresa %></td>
+					<td>R$ <%= renda.salario %></td>
+					<td><%= button_to "Delete", {:controller => :rendas,
+		:action => 'destroy', :id => renda.id }, :method => :delete %></td>
+				</tr>
+				<% end %>
 			</table>
 		</div>
 
@@ -42,27 +40,25 @@
 		</div>
 
 		<div class='white-box'> 
-			<table>
-				<thead>
+			<table id='tabela' class='itens-tabela'>
+				<tr>
 					<th>Nome</th>
 					<th>Descrição</th>
-					<th>Periodo de Cobrança</th>
+					<th>Periodo</th>
 					<th>Valor</th>
 					<th>Deletar</th>
-				</thead>
+				</tr>
 			
-				<tbody>
-					<% Array(@dividas).each do |divida| %>
-						<tr>
-							<td><%= divida.nome %></td>
-							<td><%= divida.descricao %></td>
-							<td><%= divida.periodo %></td>
-							<td><%= divida.valor %></td>
-							<td><%= button_to "Delete", {:controller => :dividas,
-			:action => 'destroy', :id => divida.id }, :method => :delete %></td>
-						</tr>
-					<% end %>
-				</tbody>
+				<% Array(@dividas).each do |divida| %>
+				<tr class='conteudo-tabela-divida'>
+					<td><%= divida.nome %></td>
+					<td><%= divida.descricao %></td>
+					<td><%= divida.periodo %></td>
+					<td>R$ <%= divida.valor %>,00</td>
+					<td><%= button_to "Delete", {:controller => :dividas,
+	:action => 'destroy', :id => divida.id }, :method => :delete %></td>
+				</tr>
+				<% end %>
 			</table>
 		</div>
 
@@ -75,39 +71,27 @@
 		</div>
 
 		<div class='white-box'>
-			<table>
-				<thead>
+			<table id='tabela' class='itens-tabela'> 
+				<tr> 
 					<th>Titulo</th>
 					<th>Descrição</th>
 					<th>Deletar</th>
-				</thead>
+				</tr>
 			
-				<tbody>
-					<% Array(@objetivos).each do |objetivo| %>
-						<tr>
-							<td><%= objetivo.titulo %></td>
-							<td><%= objetivo.descricao %></td>
-							<td><%= button_to "Delete", {:controller => :objetivos,
-			:action => 'destroy', :id => objetivo.id }, :method => :delete %></td>
-						</tr>
-					<% end %>
-				</tbody>
+
+				<% Array(@objetivos).each do |objetivo| %>
+				<tr class='conteudo-tabela-objetivo'>
+					<td><%= objetivo.titulo %></td>
+					<td><%= objetivo.descricao %></td>
+					<td><%= button_to "Delete", {:controller => :objetivos,
+	:action => 'destroy', :id => objetivo.id }, :method => :delete %></td>
+				</tr>
+				<% end %>
+
 			</table>
 		</div>
 
 	</section>
-
-	<footer>
-		<h3><strong>Engenharia de Sistemas de Informação - Grupo 1</strong></h3>
-		<p>Nome Completo - Nº USP</p>
-		<p>Nome Completo - Nº USP</p>
-		<p>Nome Completo - Nº USP</p>
-		<p>Nome Completo - Nº USP</p>
-		<p>Nome Completo - Nº USP</p>
-		<p>Nome Completo - Nº USP</p>
-		<p>Nome Completo - Nº USP</p>
-	</footer>
-
 <% else %>
     <li><%= link_to "Log in", root_path %></li>
 <% end %>

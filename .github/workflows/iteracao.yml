@@ -27,11 +27,6 @@ jobs:
       - name: Run rspec tests
         run: bundle exec rspec
 
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Run cucumber tests
         run: rake cucumber
 

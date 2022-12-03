@@ -28,7 +28,7 @@ jobs:
         run: bundle exec rspec
 
       - name: Run cucumber tests
-        run: rake cucumber
+        run: bundle exec cucumber
 
       - name: Coveralls
         uses: coverallsapp/github-action@master

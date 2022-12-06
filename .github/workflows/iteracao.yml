@@ -11,6 +11,8 @@ jobs:
     env:
       CUCUMBER_PUBLISH_ENABLED: false
     steps:
+      - name: "Say Hello Mona it's Monday"
+        run: echo "$CUCUMBER_PUBLISH_ENABLED"
       - name: Checkout repo
         uses: actions/checkout@v3
         with:

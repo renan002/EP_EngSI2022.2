@@ -2,12 +2,8 @@ Dado('que estou na página de cadastro de usuario') do
     visit '/usuarios/new'
 end
 
-Quando('preencho com infomações válidas') do |string, string2|
+Quando('preencho o campo de usuario {string} com {string}') do |string, string2|
     fill_in string, :with => string2
-end
-
-Quando('clico em salvar') do
-    click_on 'Cadastrar'
 end
 
 Então('ele deve ter sido salvo no banco de dados') do
@@ -16,11 +12,15 @@ Então('ele deve ter sido salvo no banco de dados') do
     expect(usuario.email).to eq('re.gon.mas@usp.br') 
 end
 
-Quando('preencho o nome e senha mas não o e-mail') do |string|
-    fill_in string, :with => ""
+Quando('clico em {string}') do |string|
+    click_on string
 end
 
-Então('deverei ver uma mensagem de erro sobre obrigatoriedade do email') do |string|
+Então('acessarei a página principal do usuário cadastrado') do
+    expect(page).to have_content('Seja bem vindo ao seu dashboard')
+end
+
+Então('o erro {string} será exibido na tela de cadastro') do |string|
     expect(page).to have_content(string)
 end
 

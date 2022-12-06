@@ -8,6 +8,8 @@ jobs:
   tests:
     name: Executar os testes unitários
     runs-on: ubuntu-latest
+    env:
+      CUCUMBER_PUBLISH_ENABLED: false
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3

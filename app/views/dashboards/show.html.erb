@@ -22,7 +22,7 @@
 
 				<% Array(@rendas).each do |renda| %>
 				<tr class='conteudo-tabela-renda'>
-					<td><%= renda.profissao %></td>
+					<td id='Profissao'><%= renda.profissao %></td>
 					<td><%= renda.empresa %></td>
 					<td>R$ <%= renda.salario %></td>
 					<td><%= button_to "Delete", {:controller => :rendas,

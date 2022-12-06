@@ -76,8 +76,7 @@ group :development, :test do
   gem 'database_cleaner'
   # Use sqlite3 as the database for Active Record
   gem "sqlite3", "~> 1.4"
-  gem 'simplecov'
-  gem 'simplecov-lcov', '~> 0.8.0'
-  gem 'coveralls_reborn', '~> 0.25.0', require: false
+  gem 'simplecov',      require: false
+  gem 'simplecov-lcov', require: false
   gem 'factory_bot_rails', require: false
 end

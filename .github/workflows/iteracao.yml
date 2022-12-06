@@ -28,11 +28,13 @@ jobs:
       - name: Migrate database
         run: bundle exec rails db:migrate
 
-      - name: Run rspec tests
-        run: bundle exec rspec
-
-      - name: Run cucumber tests
-        run: bundle exec cucumber --guess
+      - name: Run rspec and cucumber tests
+        env:
+          RAILS_ENV: test
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+        run: |
+          bundle exec rspec
+          bundle exec cucumber --guess
 
       - name: Coveralls
         uses: coverallsapp/github-action@master

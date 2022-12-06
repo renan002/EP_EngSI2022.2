@@ -1,4 +1,4 @@
-Dado ('que sou um usuário com login realizado na plataforma') do
+Dado ('que sou um usuário com login feito na plataforma') do
     pending
 end
 

@@ -6,7 +6,7 @@ Funcionalidade: Cadastrar contas/dividas
     Eu quero cadastrar informações de contas/dívidas
 
 Cenário: Cadastro de conta/divida com sucesso
-    Dado que sou um usuário com login realizado na plataforma
+    Dado que sou um usuário com login feito na plataforma
     E estou na página de cadastro de contas/dividas
     Quando preencho o campo "Nome" com "Aluguel"
     Quando preencho o campo "Descrição" com "Aluguel de residência atual"
@@ -17,7 +17,7 @@ Cenário: Cadastro de conta/divida com sucesso
     E deverei ver a conta/divida na lista de contas/dividas do usuário
 
 Cenário: Cadastro de conta/divida com erro - Sem nome
-    Dado que sou um usuário com login realizado na plataforma 
+    Dado que sou um usuário com login feito na plataforma 
     E estou na página de cadastro de contas/dividas
     Quando preencho o campo "Descrição" com "Aluguel de residência atual"
     Quando preencho o campo "Período  de cobrança" com "Mensal"
@@ -27,7 +27,7 @@ Cenário: Cadastro de conta/divida com erro - Sem nome
     Então deverei ver a mensagem de erro "É obrigatório informar um nome."
 
 Cenário: Cadastro de conta/divida com sucesso - Sem descrição
-    Dado que sou um usuário com login realizado na plataforma 
+    Dado que sou um usuário com login feito na plataforma 
     E estou na página de cadastro de contas/dividas
     Quando preencho o campo "Nome" com "Aluguel"
     Quando preencho o campo "Período  de cobrança" com "Mensal"
@@ -38,7 +38,7 @@ Cenário: Cadastro de conta/divida com sucesso - Sem descrição
     E deverei ver a conta/divida na lista de contas/dividas do usuário
 
 Cenário: Cadastro de conta/divida com erro - Valor zerado
-    Dado que sou um usuário com login realizado na plataforma 
+    Dado que sou um usuário com login feito na plataforma 
     E estou na página de cadastro de contas/dividas
     Quando preencho o campo "Nome" com "Aluguel"
     Quando preencho o campo "Descrição" com "Aluguel de residência atual"
@@ -48,7 +48,7 @@ Cenário: Cadastro de conta/divida com erro - Valor zerado
     Então deverei ver a mensagem de erro "É obrigatório informar um valor."
 
 Cenário: Cadastro de conta/divida com erro - Período  de cobrança não selecionado
-    Dado que sou um usuário com login realizado na plataforma 
+    Dado que sou um usuário com login feito na plataforma 
     E estou na página de cadastro de contas/dividas
     Quando preencho o campo "Nome" com "Aluguel"
     Quando preencho o campo "Descrição" com "Aluguel de residência atual"

@@ -1,4 +1,9 @@
-<%= form_for @usuario do |f| %>
+<section class='main-content'>
+
+    <div class='form-titulo'>Editar suas informações</div>
+
+    <div class='white-box'>
+    <%= form_for @usuario do |f| %>
             <% if @usuario.errors.any? %>
             <div id="error_explanation">
                         <div class="alert-error">
@@ -10,24 +15,21 @@
                                    <% end %>
                         </ul>
             </div>
-<% end %>
-            <div class="field">
-                        <%= f.label :nome %>
-                        <%= f.text_field :nome %>
+            <div class='white-box'>
+            <% end %>
+                <p class='form-label'><%= f.label :nome %></p>
+                <p class='form-input'><%= f.text_field :nome %></p>
+
+                <p class='form-label'><%= f.label :email %></p>
+                <p class='form-input'><%= f.email_field :email %></p>
+
+                <p class='form-label'><%= f.label :password %></p>
+                <p class='form-input'><%= f.password_field :password %></p>
+
+                <p class='form-label'><%= f.label :password_confirmation %></p>
+                <p class='form-input'><%= f.password_field :password_confirmation %></p>
+
+                <p class='form-btn'><%= f.submit "Cadastrar"%></p>
+            <% end %>
             </div>
-            <div class="field">
-                        <%= f.label :email %>
-                        <%= f.email_field :email %>
-            </div>
-            <div class="field">
-                        <%= f.label :password %>
-                        <%= f.password_field :password %>
-            </div>
-            <div class="field">
-                        <%= f.label :password_confirmation %>
-                        <%= f.password_field :password_confirmation %>
-            </div>
-            <div class="actions">
-                        <%= f.submit "Atualizar"%>
-            </div>
-<% end %>
+</section>

@@ -10,6 +10,7 @@ class UsuariosController < ApplicationController
   end
 
   def edit
+    @usuario = Usuario.find(params[:id])
   end
 
   def create

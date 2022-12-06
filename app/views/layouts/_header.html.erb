@@ -1,7 +1,7 @@
 <header>
   <div class='header-logo'>
     <%= image_tag 'logo.svg', style: '' %>
-    <p>Nome Maneiro</p>
+    <p>MoneyConteiner</p>
   </div>
 
   <div>
@@ -10,7 +10,7 @@
         <% if logged_in? %>
           <li class='header-btn'><%= link_to "Usuários", usuarios_path %></li>
           <li class='header-btn'><%= link_to "Página Principal", dashboards_path %></li>
-          <li class='header-btn'><%= link_to "Configurações", '#' %></li>
+          <li class='header-btn'><%= link_to "Configurações", edit_usuario_path(current_usuario) %></li>
           <li class='header-btn'><%= button_to "Sair", sign_out_path, method: "delete" %></li>
         <% else %>
           <li class='header-btn'><%= link_to "Log in", root_path %></li>

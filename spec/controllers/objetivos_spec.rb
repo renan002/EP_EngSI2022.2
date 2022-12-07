@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-RSpec::Expectations.configuration.on_potential_false_positives = :nothing
-
 RSpec.describe ObjetivosController, type: :controller do
     describe "DELETE /objetivos/:objetivo_id" do
       before(:each) do

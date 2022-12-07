@@ -7,14 +7,14 @@ Para acessar o aplicativo
 
 Cenário: Login com sucesso
 Dado que estou na página de login
-Quando preencho o campo "Email" com "ianlourenco@protonmail.com"
+Quando preencho o campo "Email" com "teste@gmail.com"
 Quando preencho o campo "Senha" com "senha123"
 E clico em login
 Então acessarei a página principal do usuário
 
 Cenário: Login sem sucesso
 Dado que estou na página de login
-Quando preencho o campo "Email" com "ianlourenco@protonmail.com"
+Quando preencho o campo "Email" com "teste@gmail.com"
 Quando preencho o campo "Senha" com "senha123"
 E clico em login
 E não há identificação

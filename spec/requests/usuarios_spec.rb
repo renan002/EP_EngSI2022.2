@@ -29,5 +29,12 @@ RSpec.describe "Usuarios", type: :request do
       expect { @usuario.reload }.to_not raise_error(ActiveRecord::RecordNotFound)
     end
   end
+
+  describe "GET /usuarios/new" do
+    it "Cria um usuario" do
+      post usuarios_path, params: {usuario: {nome: 'Test User', email: 'test@gmail.com', password: '123456', password_confirmation: '123456'}}
+      expect(response).to redirect_to(dashboards_path)
+    end
+  end
     
 end

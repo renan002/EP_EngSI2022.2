@@ -15,14 +15,14 @@
       </div>
     <% end %>
 
-    <%= form_with model: :@objetivo, url: objetivos_url, method: :edit, local: true do |form| %>
+    <%= form_with scope: :objetivo, url: objetivos_url, local: true do |form| %>
       <p class='form-label'><%= form.label :titulo %></p>
       <p class='form-input'><%= form.text_field :titulo %></p>
     
       <p class='form-label'><%= form.label :descricao %></p>
       <p class='form-input'><%= form.text_field :descricao %></p>
 
-      <p class='form-btn'><%= form.submit 'Atualizar Objetivo' %></p>
+      <p class='form-btn'><%= form.submit 'Adicionar Objetivo' %></p>
     <% end %>
   </div>
 

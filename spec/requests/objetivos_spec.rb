@@ -13,7 +13,7 @@ RSpec.describe "Objetivos", type: :request do
       expect(response).to redirect_to(dashboards_path)
     end
 
-    it "Falha objetivo com campo incosistente" do
+    it "Falha objetivo com campo inconsistente" do
       post objetivos_path, params: { objetivo: { titulo: "", descricao: "" } }
       expect(response).to_not redirect_to(dashboards_path)
     end

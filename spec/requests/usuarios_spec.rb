@@ -28,6 +28,15 @@ RSpec.describe "Usuarios", type: :request do
       get "/usuarios/#{@usuario.id}"
       expect { @usuario.reload }.to_not raise_error(ActiveRecord::RecordNotFound)
     end
+
+    it "Atualiza um usuario" do
+      @usuario = FactoryBot.create(:usuario)
+      post usuarios_path, params: { usuario: { nome: @usuario.nome, email: @usuario.email, password: @usuario.password, password_confirmation: @usuario.password_confirmation } }
+      patch "/usuarios/#{@usuario.id}", params: {usuario: { nome: 'Test User', email: 'test@gmail.com'}} 
+      @usuario.reload
+      expect(response).to have_http_status(:redirect)
+      #@usuario.update(nome: 'Test User', email: 'test@gmail.com', password: '123456', password_confirmation: '123456')
+    end
   end
 
   describe "GET /usuarios/new" do

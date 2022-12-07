@@ -75,6 +75,7 @@
 				<tr> 
 					<th>Titulo</th>
 					<th>Descrição</th>
+					<th>Editar</th>
 					<th>Deletar</th>
 				</tr>
 			
@@ -83,6 +84,7 @@
 				<tr class='conteudo-tabela-objetivo'>
 					<td><%= objetivo.titulo %></td>
 					<td><%= objetivo.descricao %></td>
+					<td><%= link_to "Editar", edit_objetivo_path(objetivo) %></td>
 					<td><%= button_to "Delete", {:controller => :objetivos,
 	:action => 'destroy', :id => objetivo.id }, :method => :delete %></td>
 				</tr>

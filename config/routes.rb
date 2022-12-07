@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'usuarios/new'
     
   get 'objetivos', to: 'objetivos#new'
+  get 'objetivos/:id/edit', to: 'objetivos#edit', as: 'edit_objetivo'
   resources :objetivos
 
   get 'dividas', to: 'dividas#new'

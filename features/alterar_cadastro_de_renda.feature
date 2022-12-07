@@ -79,7 +79,7 @@ Cenário: Alteração de renda com erro - Alteração de salário com valor inv�
     Dado que sou um usuário com login feito na plataforma
     E tenho uma renda de ID "12345", profissão "Analista de Sistemas", empresa "Google" e salário "1000.00"
     E estou na página de alteração de cadastro de uma dada renda de id "12345"
-    Quando altero o campo de salário com "AAAAA"
+    Quando altero o campo de salário com "AAAAAA"
     E clico em Adicionar Renda
     Então deverei ver a mensagem de erro de rendas "Formato de salário inválido!"
 

@@ -28,6 +28,20 @@ class RendasController < ApplicationController
         @renda = Renda.find(params[:id])
     end
 
+    def edit
+        @renda = Renda.find(params[:id])
+    end
+
+    def update
+        @renda = Renda.find(params[:id])
+        if @renda.update(renda_params)
+            flash[:success] = "Renda atualizada"
+            redirect_to dashboards_path
+        else
+            render 'edit'
+        end
+    end
+
     private
     def renda_params
         params.require(:renda).permit(:profissao, :empresa, :salario)

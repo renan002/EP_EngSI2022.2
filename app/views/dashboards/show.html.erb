@@ -17,6 +17,7 @@
 					<th>Profissão</th>
 					<th>Empresa</th>
 					<th>Salário</th>
+					<th>Editar</th>
 					<th>Deletar</th>
 				</tr>
 
@@ -25,6 +26,7 @@
 					<td id='Profissao'><%= renda.profissao %></td>
 					<td><%= renda.empresa %></td>
 					<td>R$ <%= renda.salario %></td>
+					<td><%= link_to "Editar", edit_renda_path(renda) %></td>
 					<td><%= button_to "Delete", {:controller => :rendas,
 		:action => 'destroy', :id => renda.id }, :method => :delete %></td>
 				</tr>

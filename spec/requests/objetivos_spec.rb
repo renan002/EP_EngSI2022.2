@@ -19,6 +19,14 @@ RSpec.describe "Objetivos", type: :request do
     end
   end
 
+  describe "PATCH /objetivos/:objetivo_id" do
+    it "Atualiza objetivo com sucesso" do
+      edit_usuario_path(@objetivo)
+      patch "/objetivos/#{@objetivo.id}", params: {objetivo: {titulo: 'Test Objetivo', descricao: 'Apenas um teste'}}
+      expect(@objetivo.reload.titulo).to eq('Test Objetivo')
+    end
+  end
+
   describe "GET /objetivos" do
     it "Abre pagina com sucesso" do
       get objetivos_path

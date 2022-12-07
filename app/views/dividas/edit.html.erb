@@ -1,0 +1,35 @@
+<section class='main-content'>
+
+  <div class='form-titulo'>Cadastrar conta/divida</div>
+
+  <div class='white-box'>
+    <% if @divida.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@divida.errors.count, "erro") %> impedem que a conta/divida seja gravada no banco de dados:</h2>
+
+      <ul>
+      <% @divida.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <%= form_for(@divida) do |form| %>
+      <p class='form-label'><%= form.label :nome, 'Nome:' %></p>
+      <p class='form-input'><%= form.text_field :nome %></p>
+
+      <p class='form-label'><%= form.label :descricao, 'Descrição:' %></p>
+      <p class='form-input'><%= form.text_field :descricao %></p>
+
+      <p class='form-label'><%= form.label :periodo, 'Periodo de cobrança:' %></p>
+      <p class='form-input'><%= form.select :periodo, [['Diário','diario'],['Semanal','semanal'],['Mensal','mensal'],['Anual','anual']] %></p>
+
+      <p class='form-label'><%= form.label :valor, 'Valor:' %></p>
+      <p class='form-input'><%= form.text_field :valor %></p>
+
+      <p class='form-btn'><%= form.submit 'Adicionar conta/divida' %></p>
+    <% end %>
+  </div>
+
+</section>

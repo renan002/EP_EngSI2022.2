@@ -24,6 +24,21 @@ class DividasController < ApplicationController
     def show
         @divida = Divida.find(params[:id])
     end
+
+    def edit
+        @divida = Divida.find(params[:id])
+    end
+
+    def update
+        @divida = Divida.find(params[:id])
+        if @divida.update(divida_params)
+            flash[:success] = "Dívida atualizada"
+            redirect_to dashboards_path
+        else
+            render 'edit'
+        end
+    end
+
     private
     def divida_params
         params.require(:divida).permit(:nome, :descricao, :periodo, :valor)

@@ -48,6 +48,7 @@
 					<th>Descrição</th>
 					<th>Periodo</th>
 					<th>Valor</th>
+					<th>Editar</th>
 					<th>Deletar</th>
 				</tr>
 			
@@ -57,6 +58,7 @@
 					<td><%= divida.descricao %></td>
 					<td><%= divida.periodo %></td>
 					<td>R$ <%= divida.valor %>,00</td>
+					<td><%= link_to "Editar", edit_divida_path(divida) %></td>
 					<td><%= button_to "Delete", {:controller => :dividas,
 	:action => 'destroy', :id => divida.id }, :method => :delete %></td>
 				</tr>

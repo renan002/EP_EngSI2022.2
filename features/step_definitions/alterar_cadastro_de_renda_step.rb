@@ -14,7 +14,6 @@ end
 
 Dado ('estou na página de alteração de cadastro de uma dada renda de id {string}') do |id|
     visit '/rendas/{id}/edit'
-    # visit '/rendas/' + id + '/edit'
 end
 
 Quando ( 'altero o campo de {string} com {string}' ) do |string, string2|
@@ -25,11 +24,11 @@ Quando('deixo o campo {string} vazio') do |string|
     fill_in string, :with => ""
 end
 
-Quando('clico em Adicionar Renda') do
-    click_on 'Adicionar renda'
+Quando('clico em Alterar Renda') do
+    click_on 'Alterar renda'
 end
 
-Então ( 'sua renda de id {integer} contém {string} {string}' ) do |integer, string, string2 |
+Então ( 'sua renda editada de id {integer} contém {string} {string}' ) do |integer, string, string2 |
     renda = Renda.order(integer).last
     expect(renda.string).to eq(string2)
 end

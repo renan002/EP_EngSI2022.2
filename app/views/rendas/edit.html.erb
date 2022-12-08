@@ -1,6 +1,6 @@
 <section class='main-content'>
 
-  <div class='form-titulo'>Cadastrar renda</div>
+  <div class='form-titulo'>Editar renda</div>
 
   <div class='white-box'>
 
@@ -16,7 +16,7 @@
       </div>
     <% end %>
 
-    <%= form_with scope: :renda, url: rendas_path, local: true do |form| %>
+    <%= form_for(@renda) do |form| %>
       <p class='form-label'><%= form.label :profissão %></p>
       <p class='form-input'><%= form.text_field :profissao %></p>
     
@@ -26,7 +26,7 @@
       <p class='form-label'><%= form.label :salário %></p>
       <p class='form-input'><%= form.text_field :salario, step: :any %></p>
 
-      <p class='form-btn'><%= form.submit 'Adicionar renda'%></p>
+      <p class='form-btn'><%= form.submit 'Atualizar renda'%></p>
     <% end %>
   </div>
 

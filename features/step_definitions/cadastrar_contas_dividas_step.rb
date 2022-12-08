@@ -32,13 +32,13 @@ Então ('sua conta ou dívida é cadastrada no banco de dados referente ao seu u
     expect(divida.nome).to eq('Aluguel')
     expect(divida.descricao).to eq('Aluguel de residência atual')
     expect(divida.periodo).to eq('mensal')
-    expect(divida.valor).to eq('R$ 1000,00')
+    expect(divida.valor).to eq('1000,00')
 end
 
 Então ('deverei ver a conta ou divida na lista de contas ou dividas do usuário') do
     expect(page).to have_content('Aluguel')
     expect(page).to have_content('mensal')
-    expect(page).to have_content('R$ 1000,00')
+    expect(page).to have_content('1000,00')
 end
 
 Então ('deverei ver a mensagem de erro de divida {string}') do |string|

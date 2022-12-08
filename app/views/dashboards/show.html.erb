@@ -17,6 +17,7 @@
 					<th>Profissão</th>
 					<th>Empresa</th>
 					<th>Salário</th>
+					<th>Editar</th>
 					<th>Deletar</th>
 				</tr>
 
@@ -25,6 +26,7 @@
 					<td id='Profissao'><%= renda.profissao %></td>
 					<td><%= renda.empresa %></td>
 					<td>R$ <%= renda.salario %></td>
+					<td><%= link_to "Editar", edit_renda_path(renda) %></td>
 					<td><%= button_to "Delete", {:controller => :rendas,
 		:action => 'destroy', :id => renda.id }, :method => :delete %></td>
 				</tr>
@@ -46,6 +48,7 @@
 					<th>Descrição</th>
 					<th>Periodo</th>
 					<th>Valor</th>
+					<th>Editar</th>
 					<th>Deletar</th>
 				</tr>
 			
@@ -55,6 +58,7 @@
 					<td><%= divida.descricao %></td>
 					<td><%= divida.periodo %></td>
 					<td>R$ <%= divida.valor %>,00</td>
+					<td><%= link_to "Editar", edit_divida_path(divida) %></td>
 					<td><%= button_to "Delete", {:controller => :dividas,
 	:action => 'destroy', :id => divida.id }, :method => :delete %></td>
 				</tr>

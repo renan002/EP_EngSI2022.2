@@ -1,4 +1,4 @@
-Dado ('que sou um usuário com login realizado na plataforma') do
+Dado('que sou um usuário com login realizado na plataforma') do
     visit '/usuarios/new'
     fill_in "Nome", :with => "Test User"
     fill_in "Email", :with => "teste@gmail.com"
@@ -7,8 +7,8 @@ Dado ('que sou um usuário com login realizado na plataforma') do
     click_on "Cadastrar"
 end
 
-Dado ('estou na página de cadastro de renda') do
-    visit '/rendas'
+Dado('estou na página de cadastro de renda') do
+    visit '/rendas/new'
 end
 
 Quando('preencho o campo de renda {string} com {string}') do |string, string2|

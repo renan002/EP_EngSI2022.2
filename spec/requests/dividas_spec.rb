@@ -19,6 +19,14 @@ RSpec.describe "Dividas", type: :request do
     end
   end
 
+  describe "PATCH /dividas/:divida_id" do
+    it "Atualiza dívida com sucesso" do
+      edit_usuario_path(@divida)
+      patch "/dividas/#{@divida.id}", params: {divida: {nome: 'Teste Dívida', descricao: 'Apenas um teste', periodo: 'Mensal', valor: '1000'}}
+      expect(@divida.reload.nome).to eq('Teste Dívida')
+    end
+  end
+
   describe "GET /dividas" do
     it "Abre pagina com sucesso" do
       get dividas_path

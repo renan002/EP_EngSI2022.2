@@ -8,7 +8,7 @@ Dado ('que sou um usuário com login feito na plataforma') do
 end
 
 Dado ('tenho uma dívida de ID {integer}, nome {string}, descrição {string}, periodo de cobrança e valor {string}') do |integer, string, string2, string3, string4|
-    @renda = Renda.new(user_id: integer, nome: string, descrição: string2, periodo: string3 valor: string4)
+    @renda = Renda.new(user_id: integer, nome: string, descrição: string2, periodo: string3, valor: string4)
     @renda.save
 end
 

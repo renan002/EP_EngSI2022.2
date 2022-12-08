@@ -1,12 +1,3 @@
-Dado ('que sou um usuário com login realizado na plataforma') do
-    visit '/usuarios/new'
-    fill_in "Nome", :with => "Test User"
-    fill_in "Email", :with => "teste@gmail.com"
-    fill_in "Password", :with => "123456"
-    fill_in "Password confirmation", :with => "123456"
-    click_on "Cadastrar"
-end
-
 Dado ('tenho uma renda de ID {integer}, profissão {string}, empresa {string} e salário {string}') do |integer, string, string2, string3|
     @renda = Renda.new(user_id: integer, profissao: string, empresa: string2, salario: string)
     @renda.save
@@ -37,8 +28,4 @@ Então ( 'deverei ver a renda de profissão {string}, empresa {string} e salári
     expect(page).to have_content(string)
     expect(page).to have_content(string2)
     expect(page).to have_content(string3)
-end
-
-Então('deverei ver a mensagem de erro de rendas {string}') do |string|
-    expect(page).to have_content(string)
 end

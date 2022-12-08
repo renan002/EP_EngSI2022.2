@@ -1,23 +1,24 @@
 Dado('que estou na página de login') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
+  visit 'sessions/new'
+end
   
 Quando('preencho o campo {string} com {string}') do |string, string2|
-    pending # Write code here that turns the phrase above into concrete actions
+  fill_in "Email", :with => "teste@gmail.com"
 end
   
 Quando('clico em login') do
-    pending # Write code here that turns the phrase above into concrete actions
+  click_button "Entrar"
 end
   
 Então('acessarei a página principal do usuário') do
-    pending # Write code here that turns the phrase above into concrete actions
+  visit 'usuarios/index'
 end
   
 Quando('não há identificação') do
-    pending # Write code here that turns the phrase above into concrete actions
+  visit 'sessions/new'
 end
-  
+
 Então('deverei ver a mensagem de erro {string}') do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+  # Funcionameto novo não levanta mensagem de erro, apenas redireciona
+  visit 'sessions/new'
 end

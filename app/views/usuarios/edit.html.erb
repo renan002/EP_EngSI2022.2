@@ -1,5 +1,29 @@
-<hr>
-<% if logged_in? %>
-    <%= render "form"%>
-<% else %>
-<% end %>
+<section class='main-content'>
+
+    <div class='form-titulo'>Editar suas informações</div>
+
+    <div class='white-box'>
+    <%= form_for @usuario do |f| %>
+            <% if @usuario.errors.any? %>
+            <div id="error_explanation">
+                        <div class="alert-error">
+                                   O formulário contém <%= pluralize(@usuario.errors.count, "erro") %>.
+                        </div>
+                        <ul>
+                                   <% @usuario.errors.full_messages.each do |msg| %>
+                                   <li><%= msg %></li>
+                                   <% end %>
+                        </ul>
+            </div>
+            <div class='white-box'>
+            <% end %>
+                <div class='form-label'><%= f.label :nome %></div>
+                <div class='form-input'><%= f.text_field :nome %></div>
+
+                <div class='form-label'><%= f.label :email %></div>
+                <div class='form-input'><%= f.email_field :email %></div>
+
+                <p class='form-btn'><%= f.submit "Cadastrar"%></p>
+            <% end %>
+            </div>
+</section>

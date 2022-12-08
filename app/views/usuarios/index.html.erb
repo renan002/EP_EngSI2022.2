@@ -1,21 +1,24 @@
-<h1> Usuários </h1>
- <table>
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Email</th>
-        <th>ID</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @usuarios.each do |user| %>
+<section class='main-content'>
+  
+  <div class='form-titulo'> Usuários </div>
+
+  <div class='white-box'>
+    <table id='tabela' class='itens-tabela'>
         <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>ID</th>
+          <!-- <th></th> -->
+        </tr>
+        
+        <% @usuarios.each do |user| %>
+        <tr class='conteudo-tabela-usuario'>
           <td><%= user.nome %></td>
           <td><%= user.email %></td>
           <td><%= user.id %></td>
-          <td><%= link_to "Show", user %></td>
+          <!-- Tirei o show por enquanto pq não ta servindo pra muita coisa <td><%= link_to "Show", user %></td> %> -->
         </tr>
-     <%end%>
-   </tbody>
-</table>
+        <%end%>
+    </table>
+  </div>
+</section>

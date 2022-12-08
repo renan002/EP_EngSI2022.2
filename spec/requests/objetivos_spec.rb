@@ -13,9 +13,17 @@ RSpec.describe "Objetivos", type: :request do
       expect(response).to redirect_to(dashboards_path)
     end
 
-    it "Falha objetivo com campo incosistente" do
+    it "Falha objetivo com campo inconsistente" do
       post objetivos_path, params: { objetivo: { titulo: "", descricao: "" } }
       expect(response).to_not redirect_to(dashboards_path)
+    end
+  end
+
+  describe "PATCH /objetivos/:objetivo_id" do
+    it "Atualiza objetivo com sucesso" do
+      edit_usuario_path(@objetivo)
+      patch "/objetivos/#{@objetivo.id}", params: {objetivo: {titulo: 'Test Objetivo', descricao: 'Apenas um teste'}}
+      expect(@objetivo.reload.titulo).to eq('Test Objetivo')
     end
   end
 

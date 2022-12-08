@@ -19,6 +19,14 @@ RSpec.describe "Rendas", type: :request do
     end
   end
 
+  describe "PATCH /rendas/:renda_id" do
+    it "Atualiza renda com sucesso" do
+      edit_usuario_path(@renda)
+      patch "/rendas/#{@renda.id}", params: {renda: {profissao: 'Teste Renda', empresa: 'Apenas um teste', salario: '1000'}}
+      expect(@renda.reload.profissao).to eq('Teste Renda')
+    end
+  end
+
   describe "GET /rendas" do
     it "Abre pagina com sucesso" do
       get rendas_path

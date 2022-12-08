@@ -1,7 +1,9 @@
 Dado('que fui autenticado com sucesso') do
-    pending # Write code here that turns the phrase above into concrete actions
+  visit '/usuarios/new'
+  fill_in "Email", :with => "teste@gmail.com"
+  fill_in "Password", :with => "123456"
 end
   
 Então('exibe página principal') do
-    visit '/usuarios/show'
+  visit '/usuarios/show'
 end

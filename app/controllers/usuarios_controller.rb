@@ -10,6 +10,7 @@ class UsuariosController < ApplicationController
   end
 
   def edit
+    @usuario = Usuario.find(params[:id])
   end
 
   def create
@@ -30,7 +31,7 @@ class UsuariosController < ApplicationController
     @usuario = Usuario.find(params[:id])
     respond_to do |format|
       if @usuario.update(usuario_params)
-        format.html { redirect_to usuario_url(@usuario), notice: "Usuário atualizado com sucesso." }
+        format.html { redirect_to dashboards_path(@usuario), notice: "Usuário atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @usuario }
       else
         format.html { render :edit, status: :unprocessable_entity }

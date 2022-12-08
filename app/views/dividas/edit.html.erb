@@ -15,7 +15,7 @@
     </div>
     <% end %>
 
-    <%= form_with scope: :divida, url: dividas_path, local: true do |form| %>
+    <%= form_for(@divida) do |form| %>
       <p class='form-label'><%= form.label :nome, 'Nome:' %></p>
       <p class='form-input'><%= form.text_field :nome %></p>
 

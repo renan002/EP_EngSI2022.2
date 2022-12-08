@@ -22,13 +22,64 @@ html {
 a, a:hover, a:visited, a:active {
     color: inherit;
     text-decoration: none;
-   }
+}
 
 body {
     font-family: 'Roboto', sans-serif;
     width: 100%;
     padding: 0;
-    margin: 0;
+    margin: 0;    
+}
+
+p, h1, h2, h3 {
+    line-height: 0;
+}
+
+
+/* Estilos cabeçalho */
+
+header {
+    padding: 1rem 10%;
+    background-color:#2ADCA7;
+    color: white;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+.header-logo img {
+    width: 5rem;
+    margin: 1rem;
+}
+.header-logo p {
+    font-size: 2rem;
+}
+
+.header-nav ul{
+    display: flex;
+    list-style-type: none;
+}
+.header-nav li {
+    margin-right: 3rem;
+} .header-nav li:last-child {
+    margin-right: 0;
+}
+
+.header-btn a{
+    font-size: 2rem;
+}
+
+
+
+/* Estilos do conteudo */
+
+.main-content {
+    padding: 3rem 10% 5rem 10%;
+    background-color: #EAEAEA;
 }
 
 h1 {
@@ -43,23 +94,13 @@ h2 {
     font-weight: 400;
 }
 
-.header {
-
-}
-
-.main-content {
-    padding: 4rem 10%;
-    background-color: #EAEAEA;
-}
-
 .white-box {
     width: 100%;
     background-color: white;
-    border: 1px solid #E1E1E1;
+    border: .2rem solid #E1E1E1;
     border-radius: 1rem;
-    padding: 1rem 4rem;
+    padding: 3rem 4rem;
     margin-bottom: 4rem;
-    display: flex;
     box-sizing: border-box;
 } 
 .white-box:last-child {
@@ -69,9 +110,9 @@ h2 {
 .green-box {
     width: 100%;
     background-color: #2ADCA7;
-    border: 1px solid #2ADCA7;
+    border: .2rem solid #2ADCA7;
     border-radius: 1rem;
-    padding: 1rem 4rem;
+    padding: 2rem 4rem;
     margin-bottom: 1rem;
     display: flex;
     box-sizing: border-box;
@@ -80,22 +121,129 @@ h2 {
 
 .green-box-btn {
     background-color: #2ADCA7;
-    border: 2px solid white;
+    border: .2rem solid white;
     border-radius: 1rem;
     color: white;
     text-transform: uppercase;
-    padding: .5rem 2rem;
+    padding: 1rem 2rem;
     text-decoration: none;
 }
 .green-box-btn:hover {
     background-color: white;
-    border: 2px solid white;
-    border-radius: 1rem;
+    border: .2rem solid white;
     color: #2ADCA7;
-    text-transform: uppercase;
-    padding: .5rem 2rem;
-    text-decoration: none;
 }
+
+#tabela {
+    width: 100%;
+    line-height: 3.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#tabela button {
+    background-color:#949494;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+}#tabela button:hover {
+    background-color:#BE1E2D;
+}
+
+.itens-tabela tr th {
+    color: #5A5A5A;
+    font-size: 1.8rem;
+    font-weight: 300;    
+}
+.itens-tabela tr {
+    display:flex;
+    justify-content: space-between;
+}
+
+.conteudo-tabela-renda td {
+    color: #2ADCA7;
+    font-size: 2.2rem;
+    font-weight: 300;
+}
+
+.conteudo-tabela-divida td {
+    color: #A4A4A4;
+    font-size: 1.8rem;
+    font-weight: 300;
+}.conteudo-tabela-divida td:nth-child(4n) {
+    color: #BE1E2D;
+}
+
+.conteudo-tabela-objetivo td {
+    color: #A4A4A4;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.conteudo-tabela-usuario td {
+    color: #2ADCA7;
+    font-size: 2.2rem;
+    font-weight: 300;
+}
+
+.white-box form {
+    width: 100%;
+    text-align: center;
+} 
+
+
+
+/* Estilo dos formulários */
+
+.form-titulo {
+    font-size: 3.2rem;
+    color: #5A5A5A;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.form-label {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #5A5A5A;
+}
+
+.form-input input,select {
+    border-radius: 2rem;
+    background-color: #F3F3F3;
+    border: .1rem solid #949494;
+    font-size: 2rem;
+    color:#545454;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.form-btn input {
+    background-color: white;
+    border: .2rem solid #2ADCA7;
+    border-radius: 2rem;
+    color: #2ADCA7;
+    padding: 1rem 3rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+.form-btn input:hover {
+    background-color: #2ADCA7;
+    border: .2rem solid white;
+    color: white;
+}
+
+.form-linked-text {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color:#949494;
+    padding-top: 3rem;
+}
+
+
+/* Estilos do rodapé */
 
 footer {
     width: 100%;

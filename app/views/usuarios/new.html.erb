@@ -1,1 +1,34 @@
-<%= render "form", door: @door %>
+<section class='main-content'>
+
+    <div class='form-titulo'>Cadastre-se abaixo</div>
+
+    <div class='white-box'>
+        <%= form_for @usuario do |f| %>
+                    <% if @usuario.errors.any? %>
+                    <div id="error_explanation">
+                                <div class="alert-error">
+                                        O formulário contém <%= pluralize(@usuario.errors.count, "erro") %>.
+                                </div>
+                                <ul>
+                                        <% @usuario.errors.full_messages.each do |msg| %>
+                                        <li><%= msg %></li>
+                                        <% end %>
+                                </ul>
+                    </div>
+        <% end %>
+            <p class='form-label'><%= f.label :nome %></p>
+            <p class='form-input'><%= f.text_field :nome %></p>
+
+            <p class='form-label'><%= f.label :email %></p>
+            <p class='form-input'><%= f.email_field :email %></p>
+
+            <p class='form-label'><%= f.label :password %></p>
+            <p class='form-input'><%= f.password_field :password %></p>
+
+            <p class='form-label'><%= f.label :password_confirmation %></p>
+            <p class='form-input'><%= f.password_field :password_confirmation %></p>
+
+            <p class='form-btn'><%= f.submit "Cadastrar"%></p>
+        <% end %>
+    </div>
+</section>

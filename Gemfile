@@ -43,6 +43,8 @@ gem "bootsnap", require: false
 
 gem 'bcrypt'
 
+gem 'newrelic_rpm'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

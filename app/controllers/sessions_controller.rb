@@ -1,3 +1,4 @@
+require 'new_relic/agent/method_tracer'
 class SessionsController < ApplicationController
   
   before_action :block_access, except: [:destroy]
@@ -17,4 +18,7 @@ class SessionsController < ApplicationController
     redirect_to(root_url)
   end
 
+  add_method_tracer :destroy
+  add_method_tracer :create
+  
 end

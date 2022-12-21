@@ -7,7 +7,7 @@ Dado('que fui autenticado com sucesso') do
     click_on "Cadastrar"
 end
   
-Quando('eu abro página principal') do
+Quando('eu abro página de usuarios') do
   visit '/usuarios'
 end
 

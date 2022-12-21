@@ -1,20 +1,18 @@
-# MoneyConteiner (TBA)
+# MoneyConteiner
 ## _Organize e aplique sua renda, simples e direto_
 
 [![Test Coverage](https://coveralls.io/repos/github/renan002/EP_EngSI2022.2/badge.svg?branch=master)](https://coveralls.io/github/renan002/EP_EngSI2022.2) [![Test Coverage](https://api.codeclimate.com/v1/badges/74d6b5496d287e43e856/maintainability)](https://codeclimate.com/github/renan002/EP_EngSI2022.2/maintainability) ![CI/CD](https://github.com/renan002/EP_EngSI2022.2/actions/workflows/master.yml/badge.svg)
 
 [![Heroku](https://img.icons8.com/color/30/000000/heroku.png)](https://ep-engsi2022.herokuapp.com/)
 
-O projeto constituirá de um organizador e simulador financeiro, no qual o usuário irá inserir sua renda e poderá separar e organizar as aplicações que desejar, haverão contêiners nomeados (Emergência, Alimentação, Lazer, etc) e também contêiners que simularão rendimentos para diferentes aplicações financeiras.
+O projeto é um organizador financeiro, no qual o usuário se cadastra para utilizar o serviço, ele então pode cadastrar sua renda mensal, dívidas e objetivos!
 
-## Funções (TBA)
+## Funções
 
 - Cadastro de usuário
 - Alteração de cadastro de usuário
 - Login
 - Cadastro de objetivos
-- Simulação de metas (Quanto tempo para ter X valor investido ou ter Y de rendimento mensal)
-- Compartilhamento de objetivos
 - Cadastro da renda mensal
 - Cadastro de contas/dividas
 
@@ -22,8 +20,8 @@ Temos como objetivo facilitar a organização financeira mensal do usuário, com
 
 > Objetivo -> Usuário loga, insere renda e pode começar a separar em objetivos
 
-## Ferramentas (TBA)
-Irão ser utilizados no projeto:
+## Ferramentas
+Foram utilizados no projeto:
 
 - [Ruby](https://www.ruby-lang.org/pt/)
 - [Ruby on Rails](https://rubyonrails.org/)
@@ -41,5 +39,6 @@ Irão ser utilizados no projeto:
 | Gustavo Ferreira Silva | gu-ferreira@usp.br | 10687767 |
 | Gustavo Nascimento da Cunha | gcunha@usp.br | 10438400 |
 
-## Link para o Pivotal Tracker
-https://www.pivotaltracker.com/n/projects/2603044
+## Links
+- https://www.pivotaltracker.com/n/projects/2603044
+- https://ep-engsi2022.herokuapp.com

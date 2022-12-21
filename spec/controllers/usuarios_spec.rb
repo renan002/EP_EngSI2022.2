@@ -8,6 +8,12 @@ RSpec.describe UsuariosController, type: :request do
       expect { usuario.reload }.to_not raise_error(ActiveRecord::RecordNotFound)
     end
 
+    it "Edita usuário" do
+      expect { usuario.update }.to_not raise_error(ActiveRecord::RecordNotFound)
+      expect { usuario.update }.to_not raise_error(ActiveRecord::RecordInvalid)
+      expect { usuario.update }.to_not raise_error(RuntimeError)
+    end
+
     it "Deleta usuario" do
       usuario.destroy
       expect { usuario.reload }.to raise_error(ActiveRecord::RecordNotFound)

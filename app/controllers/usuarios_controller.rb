@@ -40,6 +40,14 @@ class UsuariosController < ApplicationController
     end
   end
 
+  def destroy
+    session[:usuario_id] = nil
+    @usuario = Usuario.find(params[:id])
+    @usuario.destroy
+    sign_out
+    redirect_to root_path
+  end
+
   private
   def usuario_params
     params.require(:usuario).permit(:nome, :email, :password, :password_confirmation)

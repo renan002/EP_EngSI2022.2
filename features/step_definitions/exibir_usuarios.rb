@@ -11,6 +11,14 @@ Quando('eu abro página de usuarios') do
   visit '/usuarios'
 end
 
+Quando('eu abro a minha pagina de usuario') do
+  visit '/usuarios/1'
+end
+
 Então('todos os usuarios serao exibidos') do
   expect(page).to have_content('Usuários')
+end
+
+Então('meu perfil é exibido') do
+  expect(page).to have_content('Test User')
 end

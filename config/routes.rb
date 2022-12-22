@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get 'rendas', to: 'rendas#new'
   resources :rendas
 
+  get 'recursos', to: 'recursos#new'
+  resources :recursos
+
   resources :usuarios
   get 'sign_in' => 'sessions#new'
   post   'sign_in'   => 'sessions#create'

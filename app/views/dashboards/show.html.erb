@@ -97,6 +97,34 @@
 			</table>
 		</div>
 
+
+
+		<div class='green-box'>
+			<h2> Cadastre um recurso extraordinário qualquer </h2>
+			<button class='green-box-btn'><strong><%= link_to "Cadastrar Recurso Extraodinário", recursos_path%></strong></button>
+		</div>
+
+		<div class='white-box'> 
+			<table id='tabela' class='itens-tabela'>
+				<tr>
+					<th>Nome</th>
+					<th>Valor</th>
+					<th>Editar</th>
+					<th>Deletar</th>
+				</tr>
+			
+				<% Array(@recursos).each do |recurso| %>
+				<tr class='conteudo-tabela-recurso'>
+					<td><%= recurso.nome %></td>
+					<td>R$ <%= recurso.valor %>,00</td>
+					<td><%= link_to "Editar", edit_recurso_path(recurso) %></td>
+					<td><%= button_to "Delete", {:controller => :recursos,
+	:action => 'destroy', :id => recurso.id }, :method => :delete %></td>
+				</tr>
+				<% end %>
+			</table>
+		</div>
+
 	</section>
 <% else %>
     <li><%= link_to "Log in", root_path %></li>

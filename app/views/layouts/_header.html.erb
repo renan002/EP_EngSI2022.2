@@ -8,7 +8,7 @@
     <nav class='header-nav'>
       <ul>
         <% if logged_in? %>
-          <li class='header-btn'><%= link_to "Perfil", usuarios_path %></li>
+          <li class='header-btn'><%= link_to "Usuarios", usuarios_path %></li>
           <li class='header-btn'><%= link_to "Página Principal", dashboards_path %></li>
           <li class='header-btn'><%= link_to "Configurações", edit_usuario_path(current_usuario) %></li>
           <li class='header-btn'><%= button_to "Sair", sign_out_path, method: "delete" %></li>

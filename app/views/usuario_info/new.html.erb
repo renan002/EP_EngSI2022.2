@@ -1,0 +1,36 @@
+<section class='main-content'>
+
+  <div class='form-titulo'>Personalizar perfil</div>
+
+  <div class='white-box'>
+    <% if @usuario_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@usuario_info.errors.count, "erro") %> impedem que a conta/divida seja gravada no banco de dados:</h2>
+
+      <ul>
+      <% @usuario_info.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <%= form_with scope: :usuario_info, url: usuario_info_path, local: true do |form| %>
+
+      <p class='form-label'><%= form.label :foto, 'Foto URL:' %></p>
+      <p class='form-input'><%= form.text_field :foto %></p>
+
+      <p class='form-label'><%= form.label :idade, 'Idade:' %></p>
+      <p class='form-input'><%= form.text_field :idade %></p>
+
+      <p class='form-label'><%= form.label :genero, 'Gênero:' %></p>
+      <p class='form-input'><%= form.text_field :genero %></p>
+
+      <p class='form-label'><%= form.label :telefone, 'Telefone:' %></p>
+      <p class='form-input'><%= form.text_field :telefone %></p>
+
+      <p class='form-btn'><%= form.submit 'Cadastrar' %></p>
+    <% end %>
+  </div>
+
+</section>

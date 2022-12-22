@@ -1,6 +1,7 @@
 <section class='main-content'>
   
-  <div class='form-titulo'> Usuários </div>
+  <div class='form-titulo'> Perfil </div>
+  <button><%= link_to "Personalizar perfil", usuario_info_path%></button>
 
   <div class='white-box'>
     <table id='tabela' class='itens-tabela'>
@@ -12,12 +13,12 @@
         </tr>
         
         <% @usuarios.each do |user| %>
-        <tr class='conteudo-tabela-usuario'>
-          <td><%= user.nome %></td>
-          <td><%= user.email %></td>
-          <td><%= user.id %></td>
-          <!-- Tirei o show por enquanto pq não ta servindo pra muita coisa <td><%= link_to "Show", user %></td> %> -->
-        </tr>
+          <tr class='conteudo-tabela-usuario'>
+            <td><%= user.nome %></td>
+            <td><%= user.email %></td>
+            <td><%= user.id %></td>
+            <!-- Tirei o show por enquanto pq não ta servindo pra muita coisa <td><%= link_to "Show", user %></td> %> -->
+          </tr>
         <%end%>
     </table>
   </div>

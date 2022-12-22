@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_22_194742) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_21_231653) do
   create_table "dividas", force: :cascade do |t|
     t.string "nome"
     t.string "descricao"
@@ -29,10 +29,28 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_194742) do
     t.integer "user_id"
   end
 
+  create_table "recursos", force: :cascade do |t|
+    t.string "nome"
+    t.float "valor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+  end
+
   create_table "rendas", force: :cascade do |t|
     t.string "profissao"
     t.string "empresa"
     t.string "salario"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+  end
+
+  create_table "usuario_infos", force: :cascade do |t|
+    t.string "foto"
+    t.integer "idade"
+    t.string "genero"
+    t.string "telefone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"

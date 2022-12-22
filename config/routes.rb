@@ -20,6 +20,13 @@ Rails.application.routes.draw do
   get 'rendas', to: 'rendas#new'
   resources :rendas
 
+  get 'recursos', to: 'recursos#new'
+  resources :recursos
+
+  get 'usuario_info', to: 'usuario_info#new'
+  get 'usuario_info/:id/edit', to: 'usuario_info#edit', as: 'edit_usuario_info'
+  resources :usuario_info
+
   resources :usuarios
   get 'sign_in' => 'sessions#new'
   post   'sign_in'   => 'sessions#create'

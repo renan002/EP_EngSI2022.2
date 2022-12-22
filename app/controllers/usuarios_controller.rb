@@ -1,6 +1,8 @@
 class UsuariosController < ApplicationController
   before_action :authorize, except: [:new, :create]
 
+  before_action :correct_user?, only: [:edit, :update, :destroy]
+
   def new
     @usuario = Usuario.new
   end

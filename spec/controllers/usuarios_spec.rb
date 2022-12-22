@@ -18,5 +18,14 @@ RSpec.describe UsuariosController, type: :request do
       usuario.destroy
       expect { usuario.reload }.to raise_error(ActiveRecord::RecordNotFound)
     end
+
+    it "Mostra usuário atual" do
+      expect { usuario.show }.to_not raise_error(ActiveRecord::RecordNotFound)
+    end
+
+    it "Lista todos usuários" do
+      expect { usuario.index }.to_not raise_error(ActiveRecord::RecordNotFound)
+    end
+
   end
 end 

@@ -1,0 +1,29 @@
+<section class='main-content'>
+
+  <div class='form-titulo'>Cadastrar Recurso Extraordinario</div>
+
+  <div class='white-box'>
+    <% if @recurso.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recurso.errors.count, "erro") %> impedem que o recurso extraordinario seja gravado no banco de dados:</h2>
+
+      <ul>
+      <% @recurso.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <%= form_for(@recurso) do |form| %>
+      <p class='form-label'><%= form.label :nome, 'Nome:' %></p>
+      <p class='form-input'><%= form.text_field :nome %></p>
+
+      <p class='form-label'><%= form.label :valor, 'Valor:' %></p>
+      <p class='form-input'><%= form.text_field :valor %></p>
+
+      <p class='form-btn'><%= form.submit 'Adicionar Recurso Extraordinario' %></p>
+    <% end %>
+  </div>
+
+</section>
